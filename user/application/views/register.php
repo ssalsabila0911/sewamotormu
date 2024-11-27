@@ -29,7 +29,20 @@
     <div class="card shadow-sm p-4" style="width: 24rem;">
     <a href="<?php echo base_url(''); ?>" class="btn-close position-absolute top-0 end-0 m-2" aria-label="Close"></a>
       <h2 class="text-center mb-4">Register</h2>
-      <form action="/register" method="POST">
+      
+      <!-- Flash Message for Error or Success -->
+      <?php if ($this->session->flashdata('error')): ?>
+          <div class="alert alert-danger" role="alert">
+              <?php echo $this->session->flashdata('error'); ?>
+          </div>
+      <?php endif; ?>
+      <?php if ($this->session->flashdata('success')): ?>
+          <div class="alert alert-success" role="alert">
+              <?php echo $this->session->flashdata('success'); ?>
+          </div>
+      <?php endif; ?>
+
+      <form action="<?php echo base_url('register'); ?>" method="POST">
         <div class="mb-3">
           <label for="name" class="form-label">Nama Lengkap:</label>
           <input type="text" class="form-control" id="name" name="name" required>
