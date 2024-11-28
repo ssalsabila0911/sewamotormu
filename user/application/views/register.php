@@ -27,7 +27,7 @@
 <body>
   <div class="container vh-100 d-flex justify-content-center align-items-center">
     <div class="card shadow-sm p-4" style="width: 24rem;">
-    <a href="<?php echo base_url(''); ?>" class="btn-close position-absolute top-0 end-0 m-2" aria-label="Close"></a>
+      <a href="<?php echo base_url(''); ?>" class="btn-close position-absolute top-0 end-0 m-2" aria-label="Close"></a>
       <h2 class="text-center mb-4">Register</h2>
       
       <!-- Flash Message for Error or Success -->
@@ -45,19 +45,25 @@
       <form action="<?php echo base_url('register'); ?>" method="POST">
         <div class="mb-3">
           <label for="name" class="form-label">Nama Lengkap:</label>
-          <input type="text" class="form-control" id="name" name="name" required>
+          <input type="text" class="form-control" id="name" name="name" value="<?php echo set_value('name'); ?>" required>
         </div>
         <div class="mb-3">
           <label for="email" class="form-label">Email:</label>
-          <input type="email" class="form-control" id="email" name="email" required>
+          <input type="email" class="form-control" id="email" name="email" value="<?php echo set_value('email'); ?>" required>
         </div>
         <div class="mb-3">
           <label for="password" class="form-label">Password:</label>
           <input type="password" class="form-control" id="password" name="password" required>
+          <!-- Menampilkan pesan error jika password kurang dari 6 karakter -->
+          <?php if (form_error('password')): ?>
+            <div class="text-danger">
+                <?php echo form_error('password'); ?>
+            </div>
+          <?php endif; ?>
         </div>
         <div class="mb-3">
           <label for="no-telp" class="form-label">Nomor Telepon:</label>
-          <input type="text" class="form-control" id="no-telp" name="no-telp" required>
+          <input type="text" class="form-control" id="no-telp" name="no-telp" value="<?php echo set_value('no-telp'); ?>" required>
         </div>
         <button type="submit" class="btn btn-primary w-100">Register</button>
         <div class="text-center mt-3">

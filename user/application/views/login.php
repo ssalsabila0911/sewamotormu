@@ -29,7 +29,15 @@
     <div class="card shadow-sm p-4" style="width: 22rem;">
     <a href="<?php echo base_url(''); ?>" class="btn-close position-absolute top-0 end-0 m-2"></a>
       <h2 class="text-center mb-4">Login</h2>
-      <form action="/login" method="POST">
+
+      <!-- Menampilkan Pesan Sukses Registrasi -->
+      <?php if ($this->session->flashdata('success')): ?>
+          <div class="alert alert-success" role="alert">
+              <?php echo $this->session->flashdata('success'); ?>
+          </div>
+      <?php endif; ?>
+
+      <form action="<?php echo base_url('auth/proses_login'); ?>" method="POST">
         <div class="mb-3">
           <label for="email" class="form-label">Email:</label>
           <input type="email" class="form-control" id="email" name="email" required>

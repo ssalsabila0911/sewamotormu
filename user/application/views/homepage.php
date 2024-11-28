@@ -25,34 +25,6 @@
                 </div>
             </div>
         </section>
-        <!-- ABOUT US -->
-        <section id="about" class="py-5">
-            <div class="container">
-                <div class="row align-items-center">
-                    <h2 class="fw-bold fs-2">About Us</h2>
-                    <!-- About Text -->
-                    <div class="col-lg-6 mb-4 mb-lg-0">
-                        <p class="text-about1">
-                            <strong>SewaMotorMu</strong> adalah platform penyewaan motor yang didedikasikan untuk
-                            memberikan solusi transportasi yang mudah dan terjangkau untuk Anda. Kami memiliki berbagai
-                            pilihan motor yang dapat disesuaikan dengan kebutuhan Anda. Dengan proses yang cepat dan
-                            mudah, Anda dapat menikmati perjalanan yang nyaman tanpa harus memikirkan biaya transportasi
-                            yang tinggi.
-                        </p>
-                        <p class="text-about2">
-                            Kami percaya bahwa transportasi yang efisien adalah kunci untuk mendukung mobilitas
-                            masyarakat, terutama bagi pelajar dan pekerja yang membutuhkan solusi transportasi
-                            fleksibel. Dengan harga yang kompetitif dan layanan yang ramah, kami siap menjadi mitra
-                            perjalanan Anda.
-                        </p>
-                    </div>
-                    <!-- About Image -->
-                    <div class="col-lg-6">
-                        <img src="<?php echo base_url('assets/img/aboutus.png'); ?>" alt="About Us Image" class="img-fluid img-aboutus">
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- DATA MOTOR -->
         <section id="motor" class="py-5">
@@ -98,7 +70,7 @@
                     <!-- Contoh Motor 4 -->
                     <div class="col-md-6 col-lg-3 mb-4">
                         <div class="card shadow-sm">
-                            <img src="<?php echo base_url('assets/img/motor4.png'); ?>" class="card-img-top" alt="Motor 4">
+                            <img src="<?php echo base_url('assets/img/motor3.jpg'); ?>" class="card-img-top" alt="Motor 4">
                             <div class="card-body">
                                 <h5 class="card-title">Honda Beat</h5>
                                 <p class="card-text text-muted">Harga sewa: Rp60,000/hari</p>
@@ -107,67 +79,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-
-        <!-- CONTACT US -->
-        <section id="contact" class="py-5">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="mb-5 fw-bold text-contact">Contact Us</h2>
-                </div>
-                <!-- Kolom Peta dan Informasi Kontak -->
-                <div class="col-lg-12 d-flex justify-content-between">
-                    <!-- Map Section -->
-                    <div class="col-lg-6 mb-4 mb-lg-0">
-                        <div class="ratio ratio-16x9">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5590.788524539407!2d110.40691770433317!3d-7.759624368521459!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a599bd3bdc4ef%3A0x6f1714b0c4544586!2sUniversity%20of%20Amikom%20Yogyakarta!5e0!3m2!1sen!2sid!4v1732278183565!5m2!1sen!2sid"
-                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
-                    </div>
-                    <!-- Contact Information -->
-                    <div class="sec-right">
-                        <p class="text-muted">Jika Anda memiliki pertanyaan, jangan ragu untuk menghubungi kami melalui
-                            informasi berikut:</p>
-                        <div class="d-flex justify-content-between">
-                            <!-- Left Section: Email and Phone -->
-                            <ul class="list-unstyled">
-                                <li>
-                                    <a href="mailto:info@sewamotormu.com" class="d-flex align-items-center gap-2 text-decoration-none text-dark">
-                                        <i class="bi bi-envelope-fill icon-email"></i>
-                                        <span>info@sewamotormu.com</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://wa.me/6281234567890" class="d-flex align-items-center gap-2 text-decoration-none text-dark">
-                                        <i class="bi bi-whatsapp icon-wa"></i>
-                                        <span>+62 812 3456 7890</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- Social Media Section below WhatsApp -->
-                        <div class="d-flex flex-column gap-3 mt-4">
-                            <h5 class="fw-bold">Social Media</h5>
-                            <ul class="list-unstyled">
-                                <li>
-                                    <a href="https://instagram.com" target="_blank" class="d-flex align-items-center gap-2 text-decoration-none text-dark">
-                                        <i class="bi bi-instagram icon-ig"></i>
-                                        <span>Instagram</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.facebook.com" target="_blank" class="d-flex align-items-center gap-2 text-decoration-none text-dark">
-                                        <i class="bi bi-facebook icon-fb"></i>
-                                        <span>Facebook</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                <div class="mt-2 text-end">
+                    <a href="../pages/motor.html">
+                        <button class="btn btn-success">More</button>
+                    </a>
                 </div>
             </div>
         </section>

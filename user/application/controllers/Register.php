@@ -15,12 +15,14 @@ class Register extends CI_Controller {
         $this->form_validation->set_rules('password', 'Password', 'required|min_length[6]');
         $this->form_validation->set_rules('no-telp', 'Nomor Telepon', 'required|numeric');
 
+        $this->form_validation->set_message('min_length', 'Password harus terdiri dari minimal 6 karakter.');
+    
         if ($this->form_validation->run() == FALSE) {
             // Jika form validation gagal
             $this->load->view('register');
         } else {
             $email = $this->input->post('email', true);
-
+    
             // Cek apakah email sudah terdaftar
             if ($this->Muser->check_email_exists($email)) {
                 // Jika email sudah ada, beri pesan error
@@ -37,7 +39,7 @@ class Register extends CI_Controller {
                     'jenkel'   => null,
                     'foto'     => null
                 ];
-
+    
                 if ($this->Muser->register($data)) {
                     // Jika registrasi berhasil
                     $this->session->set_flashdata('success', 'Registrasi berhasil! Silakan login.');
@@ -50,4 +52,5 @@ class Register extends CI_Controller {
             }
         }
     }
+    
 }
