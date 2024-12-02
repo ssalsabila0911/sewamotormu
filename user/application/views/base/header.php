@@ -31,7 +31,7 @@
                     <ul class="navbar-nav gap-lg-4">
                         <!-- Link Home -->
                         <li class="nav-item">
-                            <a class="nav-link" href="#home">Home</a>
+                            <a class="nav-link" href="<?php echo base_url('motor-list'); ?>">Unit</a>
                         </li>
                         <!-- Icon Notifikasi -->
                         <li class="nav-item">

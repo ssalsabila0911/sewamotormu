@@ -47,8 +47,6 @@ class Auth extends CI_Controller {
         redirect('welcome');
         
     }
-    
-
     // Halaman registrasi
     public function register() {
         $this->load->view('register');

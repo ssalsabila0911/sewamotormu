@@ -108,60 +108,32 @@
         </section>
 
         <!-- DATA MOTOR -->
-        <section id="motor" class="py-5">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="mb-5 fw-bold text-motor">Unit Tersedia</h2>
-                </div>
-                <!-- Kolom Data Motor -->
-                <div class="row">
-                    <!-- Contoh Motor 1 -->
-                    <div class="col-md-6 col-lg-3 mb-4">
-                        <div class="card shadow-sm">
-                            <img src="<?php echo base_url('assets/img/motor1.jpg'); ?>" class="card-img-top" alt="Motor 1">
-                            <div class="card-body">
-                                <h5 class="card-title">Yamaha NMAX</h5>
-                                <p class="card-text text-muted">Harga sewa: Rp100,000/hari</p>
-                                <button class="btn btn-dark">Sewa Sekarang</button>
-                            </div>
-                        </div>
+            <section id="motor" class="py-5">
+                <div class="container">
+                    <div class="text-center">
+                        <h2 class="mb-5 fw-bold text-motor">Unit Terlaris</h2>
                     </div>
-                    <!-- Contoh Motor 2 -->
-                    <div class="col-md-6 col-lg-3 mb-4">
-                        <div class="card shadow-sm">
-                            <img src="<?php echo base_url('assets/img/motor2.jpg'); ?>" class="card-img-top" alt="Motor 2">
-                            <div class="card-body">
-                                <h5 class="card-title">Honda Vario</h5>
-                                <p class="card-text text-muted">Harga sewa: Rp80,000/hari</p>
-                                <button class="btn btn-dark">Sewa Sekarang</button>
+                    <div class="row">
+                        <?php foreach ($motors as $motor): ?>
+                            <div class="col-md-6 col-lg-3 mb-4">
+                                <div class="card shadow-sm">
+                                    <img src="<?php echo $this->config->item('url_motor').$motor['gambar']; ?>" class="card-img-top" alt="<?php echo $motor['motor']; ?>">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><?php echo $motor['motor']; ?></h5>
+                                        <p class="card-text text-muted">Harga sewa: Rp<?php echo number_format($motor['harga'], 0, ',', '.'); ?>/hari</p>
+                                        <button class="btn btn-dark">Sewa Sekarang</button>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        <?php endforeach; ?>
                     </div>
-                    <!-- Contoh Motor 3 -->
-                    <div class="col-md-6 col-lg-3 mb-4">
-                        <div class="card shadow-sm">
-                            <img src="<?php echo base_url('assets/img/motor3.jpg'); ?>" class="card-img-top" alt="Motor 3">
-                            <div class="card-body">
-                                <h5 class="card-title">Suzuki Address</h5>
-                                <p class="card-text text-muted">Harga sewa: Rp70,000/hari</p>
-                                <button class="btn btn-dark">Sewa Sekarang</button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Contoh Motor 4 -->
-                    <div class="col-md-6 col-lg-3 mb-4">
-                        <div class="card shadow-sm">
-                            <img src="<?php echo base_url('assets/img/motor4.png'); ?>" class="card-img-top" alt="Motor 4">
-                            <div class="card-body">
-                                <h5 class="card-title">Honda Beat</h5>
-                                <p class="card-text text-muted">Harga sewa: Rp60,000/hari</p>
-                                <button class="btn btn-dark">Sewa Sekarang</button>
-                            </div>
-                        </div>
+                    <div class="mt-2 text-end">
+                        <a href="<?php echo base_url('motor'); ?>">
+                            <button class="btn btn-success">More</button>
+                        </a>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
 
         <!-- CONTACT US -->

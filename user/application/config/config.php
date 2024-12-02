@@ -24,6 +24,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $config['base_url'] = 'http://localhost/sewamotormu/user';
+$config['assets_motor'] = $_SERVER["DOCUMENT_ROOT"]."/sewamotormu/assets/motor/";
+$config['url_motor'] = 'http://localhost/sewamotormu/user/assets/motor/';
 
 /*
 |--------------------------------------------------------------------------
