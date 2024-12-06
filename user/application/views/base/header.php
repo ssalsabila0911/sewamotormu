@@ -51,7 +51,7 @@
                                     Halo <?php echo $this->session->userdata('nama'); ?> <!-- Menampilkan username -->
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                                    <li><a class="dropdown-item" href="<?php echo base_url('profile'); ?>">Profile</a></li>
                                     <li><a class="dropdown-item" href="<?php echo base_url('auth/logout'); ?>">Sign Out</a></li>
                                 </ul>
                             </li>

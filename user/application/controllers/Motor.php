@@ -29,7 +29,6 @@ class Motor extends CI_Controller {
         $this->load->view('motor_detail', $data);
         $this->load->view('base/footer');
 
-
     }
     
 }
