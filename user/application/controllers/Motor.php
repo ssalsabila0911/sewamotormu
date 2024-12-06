@@ -2,11 +2,15 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Motor extends CI_Controller {
+
+    function __construct(){
+        parent::__construct();
+        $this->load->model('Mmotor');
+    }
     public function index() {
         // Pastikan user sudah login sebelum mengakses halaman ini
         if ($this->session->userdata('logged_in')) {
 
-            $this->load->model('Mmotor');
             $data['motors'] = $this->Mmotor->dataMotor();
 
             $this->load->view('base/header');
@@ -17,4 +21,15 @@ class Motor extends CI_Controller {
             redirect('login');
         }
     }
+    function detail_motor($plat="") {
+        $plat =  urldecode($plat);
+
+        $data["motor"] = $this->Mmotor->detail($plat);
+        $this->load->view('base/header');
+        $this->load->view('motor_detail', $data);
+        $this->load->view('base/footer');
+
+
+    }
+    
 }

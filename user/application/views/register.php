@@ -10,7 +10,7 @@
     body {
       height: 100vh;
       margin: 0;
-      background-image: url('../user/assets/img/sewamotormu1.png');
+      background-image: url('../user/assets/img/sewamotormu.png');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;

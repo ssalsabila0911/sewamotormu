@@ -14,7 +14,7 @@
                             terjangkau dan berbagai pilihan kendaraan untuk memenuhi kebutuhan perjalanan Anda.
                         </p>
                         <div class="d-flex flex-column flex-lg-row gap-2 gap-lg-4">
-                            <button class="btn btn-dark p-2 rounded-2">Sewa Sekarang</button>
+                            <a class="btn btn-dark p-2 rounded-2" href="<?php echo base_url('motor'); ?>">Sewa Sekarang</a>
                         </div>
                     </div>
 
@@ -35,19 +35,20 @@
         <div class="row">
             <?php foreach ($motors as $motor): ?>
                 <div class="col-md-6 col-lg-3 mb-4">
+                    <a href="<?php echo site_url('motor/detail_motor/'.$motor['plat_motor']); ?>" class="text-decoration-none">
                     <div class="card shadow-sm">
                         <img src="<?php echo $this->config->item('url_motor').$motor['gambar']; ?>" class="card-img-top" alt="<?php echo $motor['motor']; ?>">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $motor['motor']; ?></h5>
                             <p class="card-text text-muted">Harga sewa: Rp<?php echo number_format($motor['harga'], 0, ',', '.'); ?>/hari</p>
-                            <button class="btn btn-dark">Sewa Sekarang</button>
                         </div>
                     </div>
+                </a>
                 </div>
             <?php endforeach; ?>
         </div>
         <div class="mt-2 text-end">
-            <a href="<?php echo base_url('motor-list'); ?>">
+            <a href="<?php echo base_url('motor'); ?>">
                 <button class="btn btn-success">More</button>
             </a>
         </div>

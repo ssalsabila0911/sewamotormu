@@ -57,6 +57,12 @@ $route['login'] = 'auth/login';
 $route['register'] = 'auth/register';
 $route['register'] = 'register/index';
 $route['user'] = 'user/index';
-$route['motor-list'] = 'motor/index';
+// $route['motor'] = 'motor/index';
+
+
+
+
+
+
 
 

@@ -19,7 +19,7 @@
     <header class="fixed-top bg-info">
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid px-4 px-lg-5">
-                <a class="navbar-brand fw-bold fs-4" href="#">
+                <a class="navbar-brand fw-bold fs-4" href="<?php echo base_url('homepage'); ?>">
                     <img src="<?php echo base_url('assets/img/icon-motor.png'); ?>" alt="Icon" class="icon-header">
                     sewamotormu
                 </a>
@@ -31,7 +31,7 @@
                     <ul class="navbar-nav gap-lg-4">
                         <!-- Link Home -->
                         <li class="nav-item">
-                            <a class="nav-link" href="<?php echo base_url('motor-list'); ?>">Unit</a>
+                            <a class="nav-link" href="<?php echo base_url('motor'); ?>">Unit</a>
                         </li>
                         <!-- Icon Notifikasi -->
                         <li class="nav-item">
