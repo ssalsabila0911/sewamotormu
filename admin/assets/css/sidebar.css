@@ -90,3 +90,16 @@ body {
     font-size: 14px;
     color: #555;
 }
+    /* Custom CSS for Sidebar links */
+    .sidebar a {
+      text-decoration: none; /* Remove underline */
+      color: inherit; /* Inherit color from parent */
+    }
+
+    /* Style for active link */
+    .sidebar a.active {
+      font-weight: bold; /* Make active links bold */
+      color: #007bff; /* Active link color */
+    }
+
+/* TABEL MOTOR */
