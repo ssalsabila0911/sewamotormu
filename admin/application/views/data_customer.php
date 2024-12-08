@@ -24,34 +24,34 @@
     </aside>
 
     <!-- Main Content -->
-    <div class="content">
-        <h2>Data Customer</h2>
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Gambar</th>
-                        <th>Plat Nomor</th>
-                        <th>Merk &amp; Tipe</th>
-                        <th>Harga Sewa</th>
-                        <th>Status</th>
-                        <th>Opsi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><img src="https://via.placeholder.com/50" alt="Motor"></td>
-                        <td>AB 1234 CD</td>
-                        <td>Honda Vario 150</td>
-                        <td>Rp 75,000/hari</td>
-                        <td>Tersedia</td>
-                        <td>
-                            <a href="edit_motor.html" class="btn btn-edit">Edit</a>
-                            <a href="delete.html" class="btn btn-delete">Hapus</a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+     <main>
+        <div class="content">
+            <h2>Data Customer</h2>
+            <div class="table-customer">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID Customer</th>
+                            <th>Nama</th>
+                            <th>Nomor Telepon</th>
+                            <th>Email</th>
+                            <th>Opsi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>AB 1234 CD</td>
+                            <td>Honda Vario 150</td>
+                            <td>Rp 75,000/hari</td>
+                            <td>
+                                <a href="delete.html" class="btn btn-detail">Detail</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </div>
+    </main>
 </div>
+

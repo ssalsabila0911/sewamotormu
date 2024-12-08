@@ -50,13 +50,15 @@ body {
     margin-top: auto;
     padding: 10px 20px;
     border: none;
-    background-color: #333;
-    color: #fff;
+    background-color: #000544;
+    color: #fff !important; 
     cursor: pointer;
-  }
-  
-  
+    text-align: center;
+    border-radius: 5px; /* Tambahkan radius jika ingin tombol lebih halus */
+}
 
+
+  
   /* Main Content */
 .main-content {
     text-align: center;
@@ -103,3 +105,101 @@ body {
     }
 
 /* TABEL MOTOR */
+/* TABEL MOTOR */
+.table-motor {
+  overflow-x: auto; /* Agar tabel bisa di-scroll jika melebihi lebar layar */
+  max-width: 100%; /* Pastikan tabel tidak melampaui lebar kontainer */
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.table-motor table {
+  width: 100%; /* Tabel mengambil seluruh lebar kontainer */
+  border-collapse: collapse; /* Hapus garis ganda antar sel */
+  font-size: 16px;
+  text-align: left; /* Teks rata kiri */
+}
+
+.table-motor th {
+  background-color: #007bff; /* Warna biru untuk header tabel */
+  color: #fff; /* Warna teks putih untuk kontras */
+  font-weight: bold;
+  padding: 15px; /* Jarak isi header */
+  text-align: center;
+  border: 2px solid #333; /* Garis pemisah antar header */
+}
+
+.table-motor td {
+  padding: 15px; /* Jarak isi sel */
+  border: 1px solid #ddd; /* Garis pemisah antar sel */
+  text-align: center; /* Rata tengah untuk konten */
+  vertical-align: middle; /* Konten di tengah vertikal */
+}
+
+.table-motor tr:nth-child(even) {
+  background-color: #f9f9f9; /* Warna abu muda untuk baris genap */
+}
+
+.table-motor tr:nth-child(odd) {
+  background-color: #fff; /* Warna putih untuk baris ganjil */
+}
+
+.table-motor img {
+  width: 75px; /* Ukuran gambar seragam */
+  height: auto; /* Pertahankan rasio gambar */
+  border-radius: 5px; /* Tambahkan efek melengkung */
+}
+
+.btn-add-motor {
+  display: inline-block;
+  margin-bottom: 15px; /* Jarak tombol dari tabel */
+  padding: 10px 20px;
+  background-color: #007bff; /* Warna biru */
+  color: #fff; /* Teks putih */
+  font-size: 16px;
+  text-decoration: none; /* Hapus garis bawah */
+  border-radius: 5px; /* Membuat tombol melengkung */
+  transition: background-color 0.3s ease; /* Efek hover */
+}
+
+.btn-add:hover {
+  background-color: #0056b3; /* Warna hover lebih gelap */
+}
+
+.btn-edit-motor, .btn-delete-motor {
+  display: inline-block;
+  padding: 8px 15px;
+  font-size: 14px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.btn-edit-motor {
+  background-color: #28a745; /* Warna hijau untuk tombol edit */
+  margin-right: 10px;
+}
+
+.btn-edit-motor:hover {
+  background-color: #218838; /* Warna hover untuk tombol edit */
+}
+
+.btn-delete-motor {
+  background-color: #dc3545; /* Warna merah untuk tombol delete */
+}
+
+.btn-delete-motor:hover {
+  background-color: #c82333; /* Warna hover untuk tombol delete */
+}
+
+.no-data {
+  text-align: center;
+  font-size: 16px;
+  color: #555;
+  padding: 20px 0; /* Ruang vertikal jika data kosong */
+}
