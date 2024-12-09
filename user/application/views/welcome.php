@@ -67,12 +67,12 @@
                             terjangkau dan berbagai pilihan kendaraan untuk memenuhi kebutuhan perjalanan Anda.
                         </p>
                         <div class="d-flex flex-column flex-lg-row gap-2 gap-lg-4">
-                            <button class="btn btn-dark p-2 rounded-2">Sewa Sekarang</button>
+                            <a class="btn btn-dark p-2 rounded-2" href="<?php echo base_url('motor'); ?>">Sewa Sekarang</a>
                         </div>
                     </div>
 
                     <!-- Kolom Gambar -->
-                    <div class="col-lg-6 order-1 order-lg-2">
+                    <div class="col-lg-6 order-1 order-lg-2 align-item-center">
                         <img src="<?php echo base_url('assets/img/jumbotron.png'); ?>" alt="Motor Rental" class="img-fluid img-jumbotron" />
                     </div>
                 </div>
@@ -80,32 +80,31 @@
         </section>
         <!-- ABOUT US -->
         <section id="about" class="py-5">
-            <div class="container">
-                <div class="row align-items-center">
-                    <h2 class="fw-bold fs-2">About Us</h2>
-                    <!-- About Text -->
-                    <div class="col-lg-6 mb-4 mb-lg-0">
-                        <p class="text-about1">
-                            <strong>SewaMotorMu</strong> adalah platform penyewaan motor yang didedikasikan untuk
-                            memberikan solusi transportasi yang mudah dan terjangkau untuk Anda. Kami memiliki berbagai
-                            pilihan motor yang dapat disesuaikan dengan kebutuhan Anda. Dengan proses yang cepat dan
-                            mudah, Anda dapat menikmati perjalanan yang nyaman tanpa harus memikirkan biaya transportasi
-                            yang tinggi.
-                        </p>
-                        <p class="text-about2">
-                            Kami percaya bahwa transportasi yang efisien adalah kunci untuk mendukung mobilitas
-                            masyarakat, terutama bagi pelajar dan pekerja yang membutuhkan solusi transportasi
-                            fleksibel. Dengan harga yang kompetitif dan layanan yang ramah, kami siap menjadi mitra
-                            perjalanan Anda.
-                        </p>
-                    </div>
-                    <!-- About Image -->
-                    <div class="col-lg-6">
-                        <img src="<?php echo base_url('assets/img/aboutus.png'); ?>" alt="About Us Image" class="img-fluid img-aboutus">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <h2 class="fw-bold fs-2 text-center mb-4">About Us</h2>
+                        <!-- About Text -->
+                        <div class="col-lg-6 mb-4 mb-lg-0 text-center text-lg-start">
+                            <p class="text-about1">
+                                <strong>SewaMotorMu</strong> adalah platform penyewaan motor yang didedikasikan untuk memberikan
+                                solusi transportasi yang mudah dan terjangkau untuk Anda. Kami memiliki berbagai pilihan motor yang dapat
+                                disesuaikan dengan kebutuhan Anda. Dengan proses yang cepat dan mudah, Anda dapat menikmati perjalanan
+                                yang nyaman tanpa harus memikirkan biaya transportasi yang tinggi.
+                            </p>
+                            <p class="text-about2">
+                                Kami percaya bahwa transportasi yang efisien adalah kunci untuk mendukung mobilitas masyarakat,
+                                terutama bagi pelajar dan pekerja yang membutuhkan solusi transportasi fleksibel. Dengan harga yang
+                                kompetitif dan layanan yang ramah, kami siap menjadi mitra perjalanan Anda.
+                            </p>
+                        </div>
+                        <!-- About Image -->
+                        <div class="col-lg-6 text-center">
+                            <img src="<?php echo base_url('assets/img/aboutus.png'); ?>" alt="About Us Image"
+                                class="img-fluid img-aboutus mx-auto d-block">
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
         <!-- DATA MOTOR -->
             <section id="motor" class="py-5">
@@ -116,14 +115,16 @@
                     <div class="row">
                         <?php foreach ($motors as $motor): ?>
                             <div class="col-md-6 col-lg-3 mb-4">
-                                <div class="card shadow-sm">
-                                    <img src="<?php echo $this->config->item('url_motor').$motor['gambar']; ?>" class="card-img-top" alt="<?php echo $motor['motor']; ?>">
-                                    <div class="card-body">
-                                        <h5 class="card-title"><?php echo $motor['motor']; ?></h5>
-                                        <p class="card-text text-muted">Harga sewa: Rp<?php echo number_format($motor['harga'], 0, ',', '.'); ?>/hari</p>
-                                        <button class="btn btn-dark">Sewa Sekarang</button>
+                                <a href="<?php echo base_url('motor'); ?>" style="text-decoration: none; color: inherit;">
+                                    <div class="card shadow-sm">
+                                        <img src="<?php echo $this->config->item('url_motor').$motor['gambar']; ?>" class="card-img-top" alt="<?php echo $motor['motor']; ?>">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><?php echo $motor['motor']; ?></h5>
+                                            <p class="card-text text-muted">Harga sewa: Rp<?php echo number_format($motor['harga'], 0, ',', '.'); ?>/hari</p>
+                                            <span class="btn btn-dark">Sewa Sekarang</span>
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                         <?php endforeach; ?>
                     </div>
@@ -136,30 +137,30 @@
             </section>
 
 
+
         <!-- CONTACT US -->
-        <section id="contact" class="py-5">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="mb-5 fw-bold text-contact">Contact Us</h2>
-                </div>
-                <!-- Kolom Peta dan Informasi Kontak -->
-                <div class="col-lg-12 d-flex justify-content-between">
-                    <!-- Map Section -->
-                    <div class="col-lg-6 mb-4 mb-lg-0">
-                        <div class="ratio ratio-16x9">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5590.788524539407!2d110.40691770433317!3d-7.759624368521459!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a599bd3bdc4ef%3A0x6f1714b0c4544586!2sUniversity%20of%20Amikom%20Yogyakarta!5e0!3m2!1sen!2sid!4v1732278183565!5m2!1sen!2sid"
-                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
+            <section id="contact" class="py-5">
+                <div class="container">
+                    <div class="text-center">
+                        <h2 class="mb-5 fw-bold text-contact">Contact Us</h2>
                     </div>
-                    <!-- Contact Information -->
-                    <div class="sec-right">
-                        <p class="text-muted">Jika Anda memiliki pertanyaan, jangan ragu untuk menghubungi kami melalui
-                            informasi berikut:</p>
-                        <div class="d-flex justify-content-between">
-                            <!-- Left Section: Email and Phone -->
-                            <ul class="list-unstyled">
+                    <!-- Kolom Peta dan Informasi Kontak -->
+                    <div class="row">
+                        <!-- Map Section -->
+                        <div class="col-lg-6 mb-4">
+                            <div class="ratio ratio-16x9 w-100">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5590.788524539407!2d110.40691770433317!3d-7.759624368521459!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a599bd3bdc4ef%3A0x6f1714b0c4544586!2sUniversity%20of%20Amikom%20Yogyakarta!5e0!3m2!1sen!2sid!4v1732278183565!5m2!1sen!2sid"
+                                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                        <!-- Contact Information -->
+                        <div class="col-lg-6">
+                            <p class="text-muted">Jika Anda memiliki pertanyaan, jangan ragu untuk menghubungi kami melalui
+                                informasi berikut:</p>
+                            <!-- Email and WhatsApp -->
+                            <ul class="list-unstyled mb-4">
                                 <li>
                                     <a href="mailto:info@sewamotormu.com" class="d-flex align-items-center gap-2 text-decoration-none text-dark">
                                         <i class="bi bi-envelope-fill icon-email"></i>
@@ -173,29 +174,28 @@
                                     </a>
                                 </li>
                             </ul>
-                        </div>
-                        <!-- Social Media Section below WhatsApp -->
-                        <div class="d-flex flex-column gap-3 mt-4">
-                            <h5 class="fw-bold">Social Media</h5>
-                            <ul class="list-unstyled">
-                                <li>
-                                    <a href="https://instagram.com" target="_blank" class="d-flex align-items-center gap-2 text-decoration-none text-dark">
-                                        <i class="bi bi-instagram icon-ig"></i>
-                                        <span>Instagram</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.facebook.com" target="_blank" class="d-flex align-items-center gap-2 text-decoration-none text-dark">
-                                        <i class="bi bi-facebook icon-fb"></i>
-                                        <span>Facebook</span>
-                                    </a>
-                                </li>
-                            </ul>
+                            <!-- Social Media Section -->
+                            <div>
+                                <h5 class="fw-bold">Social Media</h5>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <a href="https://instagram.com" target="_blank" class="d-flex align-items-center gap-2 text-decoration-none text-dark">
+                                            <i class="bi bi-instagram icon-ig"></i>
+                                            <span>Instagram</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.facebook.com" target="_blank" class="d-flex align-items-center gap-2 text-decoration-none text-dark">
+                                            <i class="bi bi-facebook icon-fb"></i>
+                                            <span>Facebook</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
     </main>
         <!-- FOOTER -->
         <footer class="bg-info text-black py-2">

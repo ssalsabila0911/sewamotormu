@@ -1,8 +1,9 @@
-<main class="container mt-5 pt-5 flex-grow-1" style="margin-top: 20rem;">
-  <div class="row justify-content-center">
+<main class="container flex-grow-1 d-flex justify-content-center align-items-center" style="min-height: 80vh; margin-top: 5rem;">
+  <div class="row justify-content-center w-100">
     <div class="col-md-10">
-      <!-- Kotak Container -->
-      <div class="border border-danger rounded p-5" style="border-color: #ccc;">
+      <!-- Kotak Container dengan border yang berubah sesuai status -->
+      <div class="border rounded p-5 
+           <?php echo (strtolower($motor['status']) === 'tersedia') ? 'border-success' : 'border-danger'; ?>">
         <div class="row align-items-center g-4">
           <!-- Gambar -->
           <div class="col-md-6 text-center">
@@ -24,11 +25,7 @@
 
             <!-- Tombol SEWA hanya jika statusnya tersedia -->
             <?php if (strtolower($motor['status']) === 'tersedia'): ?>
-            <div class="mb-3">
-              <label for="rental-duration" class="form-label">Lama Sewa (hari):</label>
-              <input type="number" id="rental-duration" class="form-control" placeholder="Masukkan jumlah hari" min="1">
-            </div>
-            <button class="btn btn-warning" style="font-size: 1.2rem;">SEWA</button>
+            <a class="btn btn-warning" style="font-size: 1.2rem;" href="<?php echo base_url('sewa/checkout'); ?>">Sewa Sekarang</a>
             <?php endif; ?>
           </div>
         </div>

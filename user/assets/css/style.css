@@ -20,8 +20,18 @@
 }
 .img-jumbotron{
     width: 75%;
-    margin-left: 100px;
 }
+@media (min-width: 992px) {
+    .img-jumbotron {
+        transform: translateX(50px);
+    }
+}
+@media (max-width: 991.98px) {
+    .img-jumbotron {
+        transform: translateX(0);
+    }
+}
+
 .bg-pink{
     background-color: #FFEAE3;
 }
