@@ -21,10 +21,9 @@ class Motor extends CI_Controller {
             redirect('login');
         }
     }
-    function detail_motor($plat="") {
-        $plat =  urldecode($plat);
+    function detail_motor($id) {
 
-        $data["motor"] = $this->Mmotor->detail($plat);
+        $data["motor"] = $this->Mmotor->detail($id);
         $this->load->view('base/header');
         $this->load->view('motor_detail', $data);
         $this->load->view('base/footer');

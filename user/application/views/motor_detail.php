@@ -25,7 +25,7 @@
 
             <!-- Tombol SEWA hanya jika statusnya tersedia -->
             <?php if (strtolower($motor['status']) === 'tersedia'): ?>
-            <a class="btn btn-warning" style="font-size: 1.2rem;" href="<?php echo base_url('sewa/checkout'); ?>">Sewa Sekarang</a>
+            <a class="btn btn-warning" style="font-size: 1rem;" href="<?php echo site_url('sewa/checkout/' . $motor['id_motor']); ?>">Sewa Sekarang</a>
             <?php endif; ?>
           </div>
         </div>

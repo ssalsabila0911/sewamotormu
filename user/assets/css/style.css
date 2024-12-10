@@ -150,4 +150,14 @@
 }
 #editPhotoProfile {
     margin-top: 10px;
-}  
+}
+/* checkout page */
+.checkout-image {
+    max-width: 450px;
+    margin-right: 20px;
+}
+
+.checkout-form {
+    display: flex;
+    flex-direction: column;
+}

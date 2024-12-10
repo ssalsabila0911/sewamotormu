@@ -6,8 +6,15 @@ class Mmotor extends CI_Model {
 
         return $this->db->get("motor",$limit, 0)->result_array();
     }
-    function detail($plat) {
-    	$this->db->where("plat_motor", $plat);
+    function detail($id) {
+    	$this->db->where("id_motor", $id);
     	return $this->db->get("motor")->row_array();
     }
+
+    public function update_status_motor($id, $status) {
+        $this->db->set('status', $status); 
+        $this->db->where('id_motor', $id);
+        $this->db->update('motor');
+    }
 }
+

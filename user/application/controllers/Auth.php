@@ -23,7 +23,7 @@ class Auth extends CI_Controller {
         if ($user) {
             // Set session data untuk user
             $this->session->set_userdata('logged_in', true);
-            $this->session->set_userdata('user_id', $user['id']);
+            $this->session->set_userdata('id_user', $user['id']);
             $this->session->set_userdata('email', $user['email']);
             $this->session->set_userdata('nama', $user['nama']); // Menyimpan nama pengguna
         
@@ -39,7 +39,7 @@ class Auth extends CI_Controller {
     public function logout() {
         // Hapus semua data session
         $this->session->unset_userdata('logged_in');
-        $this->session->unset_userdata('user_id');
+        $this->session->unset_userdata('id_user');
         $this->session->unset_userdata('email');
         $this->session->unset_userdata('nama');
         

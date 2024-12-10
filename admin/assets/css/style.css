@@ -31,8 +31,8 @@ body {
 }
 
 .illustration {
-  width: 80%;
-  height: 80%;
+  width: 70%;
+  height: 70%;
   background: #04a573;
   border-radius: 50%;
   display: flex;
@@ -95,4 +95,96 @@ button {
 
 button:hover {
   background-color: #028c64;
+}
+
+@media (max-width: 1024px) {
+  .login-container {
+    width: 90%; 
+    height: 450px;
+  }
+
+  .login-left, .login-right {
+    flex: 1;
+    padding: 15px;
+  }
+
+  .illustration {
+    width: 60%;
+    height: 60%;
+  }
+
+  .login-right h2 {
+    font-size: 22px;
+  }
+
+  .form-group input {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  button {
+    padding: 8px 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-container {
+    width: 95%; 
+    height: 400px; 
+  }
+
+  .login-left, .login-right {
+    flex: 1;
+    padding: 10px;
+  }
+
+  .illustration {
+    width: 50%;
+    height: 50%;
+  }
+
+  .login-right h2 {
+    font-size: 20px;
+  }
+
+  .form-group input {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  button {
+    padding: 8px 18px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    width: 100%; 
+    height: auto; 
+  }
+
+  .login-left, .login-right {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .illustration {
+    width: 50%;
+    height: 50%;
+  }
+
+  .login-right h2 {
+    font-size: 18px; 
+  }
+
+  .form-group input {
+    padding: 6px;
+    font-size: 13px;
+  }
+
+  button {
+    padding: 6px 15px;
+    font-size: 14px;
+  }
 }

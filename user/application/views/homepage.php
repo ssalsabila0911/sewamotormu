@@ -35,7 +35,7 @@
         <div class="row">
             <?php foreach ($motors as $motor): ?>
                 <div class="col-md-6 col-lg-3 mb-4">
-                    <a href="<?php echo site_url('motor/detail_motor/'.$motor['plat_motor']); ?>" class="text-decoration-none">
+                    <a href="<?php echo site_url('motor/detail_motor/'.$motor['id_motor']); ?>" class="text-decoration-none">
                     <div class="card shadow-sm">
                         <img src="<?php echo $this->config->item('url_motor').$motor['gambar']; ?>" class="card-img-top" alt="<?php echo $motor['motor']; ?>">
                         <div class="card-body">
