@@ -5,17 +5,18 @@ class Sewa extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
+        $this->load->model('Msewa');
         if (!$this->session->userdata('logged_in')) {
             redirect('akun/login');
         }
     }
 
-    public function index() {
-        $data['active_page'] = 'data_sewa';  // Menandakan menu aktif adalah data sewa
-        $data['main_content'] = 'sewa';  // Menentukan view yang akan ditampilkan
+    public function index(){
 
-        $this->load->view('base/sidebar', $data);
-        $this->load->view('data_sewa', $data);  // Memuat layout dengan konten utama
+        $data['sewa'] = $this->Msewa->dataSewa();
+        $this->load->view('base/header'); 
+        $this->load->view('data_sewa', $data);
+        $this->load->view('base/footer');
     }
 }
 ?>

@@ -1,59 +1,39 @@
-<div class="container">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-        <div class="logo">
-            <h2>SEWAMOTORMU</h2>
-        </div>
-        <nav>
-            <ul>
-                <li class="<?php echo ($active_page == 'dashboard') ? 'active' : ''; ?>">
-                    <a href="<?php echo base_url('dashboard'); ?>">Dashboard</a>
-                </li>
-                <li class="<?php echo ($active_page == 'data_motor') ? 'active' : ''; ?>">
-                    <a href="<?php echo base_url('motor'); ?>">Data Motor</a>
-                </li>
-                <li class="<?php echo ($active_page == 'data_sewa') ? 'active' : ''; ?>">
-                    <a href="<?php echo base_url('sewa'); ?>">Data Sewa</a>
-                </li>
-                <li class="<?php echo ($active_page == 'data_customer') ? 'active' : ''; ?>">
-                    <a href="<?php echo base_url('customer'); ?>">Data Customer</a>
-                </li>
-            </ul>
-        </nav>
-        <a href="<?php echo base_url('akun/logout'); ?>" class="logout">Logout</a>
-    </aside>
-
-    <!-- Main Content -->
-     <main>
-        <div class="content">
-            <h2>Data Sewa</h2>
-            <div class="table-sewa">
-                <table>
-                    <thead>
+<main class="container my-5" style="padding-top: 200px;">
+    <div class="content">
+        <h2 class="mb-4 text-center fw-bold">Data Sewa</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead class="table text-center table-sewa-color">
+                    <tr>
+                        <th>ID Sewa</th>
+                        <th>Nama Customer</th>
+                        <th>Motor</th>
+                        <th>Tanggal Sewa</th>
+                        <th>Tanggal Kembali</th>
+                        <th>Total Biaya</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php if (!empty($sewa)) : ?>
+                        <?php foreach ($sewa as $sewa_item) : ?>
+                            <tr>
+                                <td class="text-center"><?php echo $sewa_item['id_sewa']; ?></td>
+                                <td><?php echo $sewa_item['nama_customer']; ?></td>
+                                <td><?php echo $sewa_item['merk']; ?> - <?php echo $sewa_item['motor']; ?></td>
+                                <td class="text-center"><?php echo date('d-m-Y', strtotime($sewa_item['tgl_sewa'])); ?></td>
+                                <td class="text-center"><?php echo date('d-m-Y', strtotime($sewa_item['tgl_kembali'])); ?></td>
+                                <td class="text-center">Rp <?php echo number_format($sewa_item['total'], 0, ',', '.'); ?></td>
+                                <td class="text-center"><?php echo ucfirst($sewa_item['status_sewa']); ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php else : ?>
                         <tr>
-                            <th>ID Sewa</th>
-                            <th>Nama Customer</th>
-                            <th>Motor</th>
-                            <th>Tanggal Sewa</th>
-                            <th>Tanggal Kembali</th>
-                            <th>Total Biaya</th>
-                            <th>Status</th>
+                            <td colspan="7" class="text-center">Tidak ada data sewa tersedia</td>
                         </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>AB 1234 CD</td>
-                            <td>Honda Vario 150</td>
-                            <td>Rp 75,000/hari</td>
-                            <td>5</td>
-                            <td>6</td>
-                            <td>7</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                    <?php endif; ?>
+                </tbody>
+            </table>
         </div>
-    </main>
-</div>
-
+    </div>
+</main>

@@ -36,7 +36,7 @@ class Sewa extends CI_Controller {
     public function proses_sewa() {
         // Data yang dikirim dari form checkout
         $data = [
-            'id_user'       => $this->session->userdata('logged_in'), // Ambil ID user dari session
+            'id_user'       => $this->session->userdata('id_user'), // Ambil ID user dari session
             'id_motor'      => $this->input->post('id_motor'),
             'tgl_sewa'      => date('Y-m-d'), // Tanggal hari ini
             'tgl_kembali'   => date('Y-m-d', strtotime('+' . $this->input->post('lama_sewa') . ' days')), // Tambah lama sewa

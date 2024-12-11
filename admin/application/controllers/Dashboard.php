@@ -12,13 +12,10 @@ class Dashboard extends CI_Controller {
     }
 
     public function index() {
-        // Set data untuk menentukan halaman aktif dan konten utama
-        $data['active_page'] = 'dashboard';  // Menandakan menu aktif adalah dashboard
-        $data['main_content'] = 'dashboard'; // Menentukan view yang akan ditampilkan
-
         // Memuat layout, sidebar dan konten utama
-        $this->load->view('base/sidebar', $data); 
-        $this->load->view('dashboard', $data);
+        $this->load->view('base/header'); 
+        $this->load->view('dashboard');
+        $this->load->view('base/footer'); 
     }
 }
 ?>

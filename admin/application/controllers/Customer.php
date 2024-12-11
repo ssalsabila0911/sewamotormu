@@ -5,17 +5,18 @@ class Customer extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
+        $this->load->model('Mcustomer');
         if (!$this->session->userdata('logged_in')) {
             redirect('akun/login');
         }
     }
 
-    public function index() {
-        $data['active_page'] = 'data_customer';  // Menandakan menu aktif adalah data customer
-        $data['main_content'] = 'customer';  // Menentukan view yang akan ditampilkan
+    public function index(){
 
-        $this->load->view('base/sidebar', $data);
-        $this->load->view('data_customer', $data);  // Memuat layout dengan konten utama
+        $data['user'] = $this->Mcustomer->dataCustomer();
+        $this->load->view('base/header'); 
+        $this->load->view('data_customer', $data);
+        $this->load->view('base/footer');
     }
 }
 ?>

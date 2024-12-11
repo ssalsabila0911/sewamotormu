@@ -1,36 +1,12 @@
-<div class="container">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-        <div class="logo">
-            <h2>SEWAMOTORMU</h2>
-        </div>
-        <nav>
-            <ul>
-                <li class="<?php echo ($active_page == 'dashboard') ? 'active' : ''; ?>">
-                    <a href="<?php echo base_url('dashboard'); ?>">Dashboard</a>
-                </li>
-                <li class="<?php echo ($active_page == 'data_motor') ? 'active' : ''; ?>">
-                    <a href="<?php echo base_url('motor'); ?>">Data Motor</a>
-                </li>
-                <li class="<?php echo ($active_page == 'data_sewa') ? 'active' : ''; ?>">
-                    <a href="<?php echo base_url('sewa'); ?>">Data Sewa</a>
-                </li>
-                <li class="<?php echo ($active_page == 'data_customer') ? 'active' : ''; ?>">
-                    <a href="<?php echo base_url('customer'); ?>">Data Customer</a>
-                </li>
-            </ul>
-        </nav>
-        <a href="<?php echo base_url('akun/logout'); ?>" class="logout">Logout</a>
-    </aside>
-
-    <!-- Main Content -->
+<!-- Main Content -->
+<main class="container my-5" style="padding-top: 250px;">
     <div class="content">
-        <h2>Data Motor</h2>
-        <a href="<?php echo base_url('motor/tambah'); ?>" class="btn-add-motor">Tambah Data</a>
-        <div class="table-motor">
-            <table>
-                <thead>
+        <h2 class="mb-4 text-center fw-bold">Data Motor</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead class="table text-center table-mtr-color">
                     <tr>
+                        <th style="width: 8%;">ID Motor</th>
                         <th>Gambar</th>
                         <th>Plat Motor</th>
                         <th>Merk &amp; Tipe</th>
@@ -40,31 +16,33 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php if (!empty($motor_data)) : ?>
-                        <?php foreach ($motor_data as $motor) : ?>
+                    <?php if (!empty($motors)) : ?>
+                        <?php foreach ($motors as $motor) : ?>
                             <tr>
-                                <td>
-                                    <img src="<?php echo $this->config->item('url_motor').$motor['gambar']; ?>" alt="<?php echo $motor['motor']; ?>" width="50">
+                                <td class="text-center"><?php echo $motor['id_motor']; ?></td>
+                                <td class="text-center">
+                                    <img src="<?php echo $this->config->item('url_motor') . $motor['gambar']; ?>" alt="<?php echo $motor['motor']; ?>" width="80">
                                 </td>
                                 <td><?php echo $motor['plat_motor']; ?></td>
                                 <td><?php echo $motor['merk']; ?> - <?php echo $motor['motor']; ?></td>
                                 <td>Rp <?php echo number_format($motor['harga'], 0, ',', '.'); ?>/hari</td>
-                                <td><?php echo ucfirst($motor['status']); ?></td>
-                                <td>
-                                    <a href="<?php echo base_url('motor/edit/' . $motor['plat_motor']); ?>" class="btn btn-edit-motor">Edit</a>
-                                    <a href="<?php echo base_url('motor/delete/' . $motor['plat_motor']); ?>" class="btn btn-delete-motor" onclick="return confirm('Apakah Anda yakin?');">Hapus</a>
+                                <td class="text-center"><?php echo ucfirst($motor['status']); ?></td>
+                                <td class="text-center">
+                                    <a href="<?php echo base_url('motor/edit/' . $motor['plat_motor']); ?>" class="btn btn-sm btn-warning">Edit</a>
+                                    <a href="<?php echo base_url('motor/delete/' . $motor['plat_motor']); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin?');">Hapus</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
                     <?php else : ?>
                         <tr>
-                            <td colspan="6" style="text-align: center;">Tidak ada data motor tersedia</td>
+                            <td colspan="7" class="text-center">Tidak ada data motor tersedia</td>
                         </tr>
                     <?php endif; ?>
                 </tbody>
             </table>
+        <div class="d-flex justify-content-end mb-3">
+            <a href="<?php echo base_url('motor/tambah'); ?>" class="btn btn-primary btn-sm">Tambah Data</a>
+        </div>
         </div>
     </div>
-</div>
-</body>
-</html>
+</main>
