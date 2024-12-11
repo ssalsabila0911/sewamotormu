@@ -33,6 +33,12 @@
                         <li class="nav-item">
                             <a class="nav-link" href="<?php echo base_url('motor'); ?>">Unit</a>
                         </li>
+                        <!-- Link Riwayat -->
+                        <?php if ($this->session->userdata('logged_in')): ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?php echo base_url('sewa/riwayat'); ?>">Riwayat</a>
+                            </li>
+                        <?php endif; ?>
                         <!-- Dropdown Halo User -->
                         <?php if ($this->session->userdata('logged_in')): ?>
                             <li class="nav-item dropdown">
@@ -55,3 +61,32 @@
             </div>
         </nav>
     </header>
+    
+    <?php if ($this->session->flashdata('popup_message')): ?>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let message = "<?php echo $this->session->flashdata('popup_message'); ?>";
+            let modalHtml = `
+                <div class="modal fade" id="popupModal" tabindex="-1" aria-labelledby="popupModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="popupModalLabel">Notifikasi</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                ${message}
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+            
+            document.body.insertAdjacentHTML('beforeend', modalHtml);
+            let popupModal = new bootstrap.Modal(document.getElementById('popupModal'));
+            popupModal.show();
+        });
+    </script>
+<?php endif; ?>

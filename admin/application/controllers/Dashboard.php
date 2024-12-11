@@ -7,7 +7,7 @@ class Dashboard extends CI_Controller {
         parent::__construct();
         // Pastikan user sudah login, jika tidak, redirect ke login page
         if (!$this->session->userdata('logged_in')) {
-            redirect('akun/login');
+            redirect('login');
         }
     }
 

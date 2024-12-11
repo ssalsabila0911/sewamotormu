@@ -30,6 +30,13 @@
     <a href="<?php echo base_url(''); ?>" class="btn-close position-absolute top-0 end-0 m-2"></a>
       <h2 class="text-center mb-4">Login</h2>
 
+      <!-- Menampilkan Pesan Kesalahan -->
+      <?php if ($this->session->flashdata('error')): ?>
+          <div class="alert alert-danger" role="alert">
+              <?php echo $this->session->flashdata('error'); ?>
+          </div>
+      <?php endif; ?>
+
       <!-- Menampilkan Pesan Sukses Registrasi -->
       <?php if ($this->session->flashdata('success')): ?>
           <div class="alert alert-success" role="alert">

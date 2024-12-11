@@ -16,5 +16,17 @@ class Msewa extends CI_Model {
         }
         return false; 
     }
+
+    public function cek_nik_aktif($nik) {
+        $this->db->where('NIK', $nik);
+        $this->db->where('status_sewa', 'Aktif'); 
+        $query = $this->db->get('sewa');
+        return $query->num_rows() > 0; 
+    }
+    public function tampilRiwayat($id_user) {
+        $this->db->where('id_user', $id_user);
+        $this->db->order_by('tgl_sewa', 'DESC');
     
+        return $this->db->get("sewa")->result_array(); 
+    }
 }

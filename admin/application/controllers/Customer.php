@@ -7,7 +7,7 @@ class Customer extends CI_Controller {
         parent::__construct();
         $this->load->model('Mcustomer');
         if (!$this->session->userdata('logged_in')) {
-            redirect('akun/login');
+            redirect('login');
         }
     }
 

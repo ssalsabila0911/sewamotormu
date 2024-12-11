@@ -28,8 +28,8 @@
                                 <td>Rp <?php echo number_format($motor['harga'], 0, ',', '.'); ?>/hari</td>
                                 <td class="text-center"><?php echo ucfirst($motor['status']); ?></td>
                                 <td class="text-center">
-                                    <a href="<?php echo base_url('motor/edit/' . $motor['plat_motor']); ?>" class="btn btn-sm btn-warning">Edit</a>
-                                    <a href="<?php echo base_url('motor/delete/' . $motor['plat_motor']); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin?');">Hapus</a>
+                                    <a href="<?php echo base_url('motor/edit/' . $motor['id_motor']); ?>" class="btn btn-sm btn-warning">Edit</a>
+                                    <a href="<?php echo base_url('motor/hapus/' . $motor['id_motor']); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin?');">Hapus</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

@@ -23,18 +23,19 @@ class Auth extends CI_Controller {
         if ($user) {
             // Set session data untuk user
             $this->session->set_userdata('logged_in', true);
-            $this->session->set_userdata('id_user', $user['id_user']); // Menggunakan id_user sesuai dengan kolom di database
+            $this->session->set_userdata('id_user', $user['id_user']);
             $this->session->set_userdata('email', $user['email']);
-            $this->session->set_userdata('nama', $user['nama']); // Menyimpan nama pengguna
+            $this->session->set_userdata('nama', $user['nama']);
         
             // Arahkan ke halaman home
             redirect('homepage');
         } else {
-            // Jika login gagal, tampilkan pesan error
-            $this->session->set_flashdata('error', 'Invalid login credentials');
+            // Jika login gagal, set flash data error
+            $this->session->set_flashdata('error', 'Email atau Password Salah. Ulangi Kembali!');
             redirect('login');
         }
     }
+    
     
     
     public function logout() {

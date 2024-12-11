@@ -7,7 +7,7 @@ class Sewa extends CI_Controller {
         parent::__construct();
         $this->load->model('Msewa');
         if (!$this->session->userdata('logged_in')) {
-            redirect('akun/login');
+            redirect('login');
         }
     }
 
