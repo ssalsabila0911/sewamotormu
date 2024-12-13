@@ -1,5 +1,5 @@
 <!-- FOOTER -->
-<footer class="bg-info text-dark py-2 mt-auto w-100">
+<footer class="bg-blue text-dark py-2 mt-auto w-100">
         <hr class="bg-white mt-4">
         <div class="text-center small">
             <p class="mb-0">&copy; ADMIN SewaMotorMu 2024. All Rights Reserved.</p>

@@ -1,4 +1,4 @@
-<main class="container my-5" style="padding-top: 300px;">
+<main class="container my-5 pt-6">
     <div class="form-card">
         <h3 class="fw-bold">Tambah Data Motor</h3>
         <form action="<?php echo base_url('motor/proses_tambah'); ?>" method="POST" enctype="multipart/form-data">

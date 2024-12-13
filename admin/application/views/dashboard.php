@@ -1,4 +1,4 @@
-<main class="container my-5" style="padding-top: 100px;">
+<main class="container my-5 pt-6">
     <div class="main-content text-center">
         <h1>Welcome to the Dashboard</h1>
         <p>Ini adalah halaman dashboard tempat Anda dapat mengelola berbagai data.</p>

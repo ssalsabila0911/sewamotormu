@@ -1,5 +1,5 @@
 <!-- Main Content -->
-<main class="container my-5" style="padding-top: 250px;">
+<main class="container my-5 pt-6">
     <div class="content">
         <h2 class="mb-4 text-center fw-bold">Data Motor</h2>
         <div class="table-responsive">

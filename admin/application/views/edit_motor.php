@@ -1,4 +1,4 @@
-<main class="container my-5" style="padding-top: 300px;">
+<main class="container my-5 pt-7">
     <h2>Edit Motor</h2>
     <form action="<?= base_url('motor/proses_edit/'.$motor['id_motor']) ?>" method="POST" enctype="multipart/form-data">
         <div class="form-group">

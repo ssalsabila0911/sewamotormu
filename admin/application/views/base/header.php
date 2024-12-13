@@ -16,7 +16,7 @@
 
 <body class="d-flex flex-column min-vh-100">
     <!-- NAVBAR -->
-    <header class="fixed-top bg-info">
+    <header class="fixed-top bg-blue">
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid px-4 px-lg-5">
                 <a class="navbar-brand fw-bold fs-4" href="<?php echo base_url('dashboard'); ?>">

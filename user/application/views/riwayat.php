@@ -8,7 +8,6 @@
     </script>
 <?php endif; ?>
 
-
 <main class="container mt-5 pt-5 flex-grow-1"> 
     <!-- Tampilkan riwayat sewa -->
     <h4 class="mb-5 fw-bold">Riwayat Sewa</h4>
@@ -30,7 +29,13 @@
                     <td><?= $sewa['total']; ?></td>
                     <td><?= $sewa['status_bayar']; ?></td>
                     <td>
-                        <a class="btn btn-primary" href="<?php echo site_url('sewa/detail_sewa/'.$sewa['id_sewa']); ?>">Detail</a>
+                        <?php if ($sewa['status_bayar'] == 'Belum Dibayar'): ?>
+                            <!-- Tombol Bayar Sekarang -->
+                            <a class="btn btn-success" href="">Bayar Sekarang</a>
+                        <?php elseif ($sewa['status_bayar'] == 'Lunas'): ?>
+                            <!-- Tombol Detail -->
+                            <a class="btn btn-primary" href="<?php echo site_url('sewa/detail_sewa/'.$sewa['id_sewa']); ?>">Detail</a>
+                        <?php endif; ?>
                     </td>
                 </tr>
             <?php endforeach; ?>
