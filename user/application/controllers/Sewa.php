@@ -55,17 +55,17 @@ class Sewa extends CI_Controller {
         
         // Cek apakah NIK sudah digunakan pada sewa aktif
         if ($this->Msewa->cek_nik_aktif($nik)) {
-            // Simpan pesan di session flashdata untuk ditampilkan
             $this->session->set_flashdata('popup_message', 'NIK yang anda masukkan telah digunakan untuk sewa yang masih berjalan. Selesaikan sewa sebelumnya sebelum menggunakan NIK ini lagi atau gunakan NIK lain.');
             redirect('sewa/checkout/' . $id_motor);
             return; // Hentikan proses jika NIK tidak valid
         }
         
-        // Data untuk disimpan
-        $data = [
-            'id_user'       => $this->session->userdata('id_user'), // Ambil ID user dari session
+        // Data untuk disimpan ke tabel sewa
+        $data_sewa = [
+            'id_user'       => $this->session->userdata('id_user'),
             'id_motor'      => $id_motor,
             'tgl_sewa'      => date('Y-m-d'), 
+            'lama_sewa_hari'=> $lama_sewa,
             'tgl_kembali'   => date('Y-m-d', strtotime('+' . $lama_sewa . ' days')), // Tambah lama sewa
             'status_bayar'  => 'Belum Dibayar',
             'notifikasi'    => 'Belum',
@@ -75,7 +75,21 @@ class Sewa extends CI_Controller {
         ];
     
         // Masukkan data ke tabel sewa
-        $this->Msewa->insert($data);
+        $id_sewa = $this->Msewa->insert($data_sewa); // Simpan dan dapatkan ID sewa yang baru dimasukkan
+    
+        // Simpan data ke tabel detail_sewa
+        $data_detail_sewa = [
+            'id_sewa'       => $id_sewa,  // ID sewa yang baru saja dimasukkan
+            'id_motor'      => $id_motor,
+            'id_user'       => $this->session->userdata('id_user'),
+            'status_sewa'   => 'Aktif',
+            'total'         => $harga * $lama_sewa,  // Total harga
+            'tgl_sewa'      => date('Y-m-d'),
+            'tgl_kembali'   => date('Y-m-d', strtotime('+' . $lama_sewa . ' days'))
+        ];
+    
+        // Simpan data ke tabel detail_sewa
+        $this->db->insert('detail_sewa', $data_detail_sewa);
     
         // Update status motor menjadi 'Disewa'
         $this->Mmotor->update_status_motor($id_motor, 'Disewa');
@@ -83,8 +97,6 @@ class Sewa extends CI_Controller {
         // Redirect ke halaman riwayat dengan parameter notifikasi
         redirect('sewa/riwayat?notif=success');
     }
-    
-    
     
     public function riwayat() {
         // Pastikan user sudah login
@@ -99,6 +111,14 @@ class Sewa extends CI_Controller {
         } else {
             redirect('login');
         }
+    }
+    function detail_sewa($id_sewa) {
+    
+        $data['sewa'] = $this->Msewa->detail_sewa($id_sewa);
+
+        $this->load->view('base/header');
+        $this->load->view('detail_sewa', $data);
+        $this->load->view('base/footer');
     }
     
 }

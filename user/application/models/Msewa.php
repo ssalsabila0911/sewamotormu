@@ -29,4 +29,14 @@ class Msewa extends CI_Model {
     
         return $this->db->get("sewa")->result_array(); 
     }
+    function detail_sewa($id_sewa) {
+        $this->db->where("sewa.id_sewa", $id_sewa);
+        $this->db->join("sewa","detail_sewa.id_sewa=sewa.id_sewa","left");
+        $this->db->join("user","detail_sewa.id_user=user.id_user","left");
+        $this->db->join("motor","detail_sewa.id_motor=motor.id_motor","left");
+        $sewa = $this->db->get("detail_sewa")->row_array();
+
+        return $sewa;
+    }
+    
 }

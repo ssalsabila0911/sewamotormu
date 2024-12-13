@@ -1,8 +1,13 @@
 <?php if (isset($_GET['notif']) && $_GET['notif'] == 'success'): ?>
     <script type="text/javascript">
-        alert('Sewa motor Anda berhasil!'); 
+        alert('Sewa motor Anda berhasil!');
+        // Remove ?notif=success from the URL
+        const url = new URL(window.location.href);
+        url.searchParams.delete('notif'); // Remove the "notif" parameter
+        window.history.replaceState({}, document.title, url);
     </script>
 <?php endif; ?>
+
 
 <main class="container mt-5 pt-5 flex-grow-1"> 
     <!-- Tampilkan riwayat sewa -->
@@ -25,7 +30,7 @@
                     <td><?= $sewa['total']; ?></td>
                     <td><?= $sewa['status_bayar']; ?></td>
                     <td>
-                        <a href="#">Detail</a>
+                        <a class="btn btn-primary" href="<?php echo site_url('sewa/detail_sewa/'.$sewa['id_sewa']); ?>">Detail</a>
                     </td>
                 </tr>
             <?php endforeach; ?>
