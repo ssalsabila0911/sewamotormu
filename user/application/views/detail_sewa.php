@@ -127,7 +127,7 @@
 
 
 <?php if (!empty($snapToken)): ?>
-<script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="SB-Mid-client-DB7IhQ0wGMmkXYmr"></script>
+<script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="//client key here"></script>
     <script type="text/javascript">
       document.getElementById('pay-button').onclick = function(){
         snap.pay('<?php echo $snapToken?>', {
