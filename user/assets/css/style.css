@@ -1,0 +1,148 @@
+/* CSS CUSTOM */
+.pt-6 {
+    padding-top: 4rem;
+}
+.bg-mrh {
+    background-color: rgb(255, 234, 226);
+}
+/* BATAS CSS CUSTOM */
+.nav-link{
+    font-weight: bold;
+}
+.icon-header{
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+}
+.nav-profile-icon {
+    display: flex;
+    align-items: center;
+}
+.nav-profile-icon svg {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px; 
+}
+.img-jumbotron{
+    width: 75%;
+}
+@media (min-width: 992px) {
+    .img-jumbotron {
+        transform: translateX(50px);
+    }
+}
+@media (max-width: 991.98px) {
+    .img-jumbotron {
+        transform: translateX(0);
+    }
+}
+
+.bg-pink{
+    background-color: #FFEAE3;
+}
+#home .container {
+    padding: 20px 0;
+}
+.img-aboutus{
+    width: 60%;
+    margin-left: 180px;
+}
+.text-about1, .text-about2 {
+    text-align: justify;
+}
+
+/* contact us */
+.sec-right{
+    margin-left: 50px;
+}
+.list-unstyled {
+    padding: 0;
+    margin: 0; 
+    list-style: none;
+}
+
+.list-unstyled li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px; 
+}
+
+.list-unstyled i {
+    font-size: 1.2rem; 
+    color: #000;  
+}
+
+.list-unstyled span {
+    font-size: 1rem; 
+    color: #000;
+}
+
+/* Motor */
+.card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card img {
+    height: 250px; 
+    width: 100%; 
+    object-fit:contain;
+}
+.card-title {
+    min-height: 40px;
+}
+
+.card-body {
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Motor */
+.bell{
+    width: 25px;
+    height: 25px;
+}
+
+.col-th{
+    text-align: center;
+}
+.col-no{
+    width: 50px; 
+    text-align: center;
+}
+
+
+/* CSS Profile */
+.card {
+    border-radius: 12px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.profile-view {
+    font-size: 1rem;
+    color: #333;
+}
+
+.profile-edit {
+    font-size: 1rem;
+}
+
+/* checkout page */
+.checkout-image {
+    max-width: 450px;
+    margin-right: 20px;
+}
+
+.checkout-form {
+    display: flex;
+    flex-direction: column;
+}

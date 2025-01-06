@@ -1,0 +1,259 @@
+/* CUSTOM CSS */
+.bg-blue{
+    background-color: rgb(166, 211, 241);
+}
+.pt-6a{
+  padding-top: 7rem;
+}
+.pt-6 {
+  padding-top: 15rem;
+}
+.pt-7{
+  padding-top: 25rem;
+}
+.pt-dash{
+  padding-top: 100rem;
+}
+/* BATAS CUSTOM CSS */
+/* LOGIN PAGE */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f7f9fc;
+}
+
+.login-container {
+  display: flex;
+  width: 80%;
+  max-width: 900px;
+  height: 500px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+/* Left Section */
+.login-left {
+  flex: 1;
+  background-color: #e7f6f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.illustration {
+  width: 70%;
+  height: 70%;
+  background: #04a573;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.illustration img {
+  width: 90%;
+  object-fit: contain;
+}
+
+/* Right Section */
+.login-right {
+  flex: 1;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.login-right h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.form-group label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  display: block;
+  color: #666;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+button {
+  background-color: #04a573;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #028c64;
+}
+
+@media (max-width: 1024px) {
+  .login-container {
+    width: 90%; 
+    height: 450px;
+  }
+
+  .login-left, .login-right {
+    flex: 1;
+    padding: 15px;
+  }
+
+  .illustration {
+    width: 60%;
+    height: 60%;
+  }
+
+  .login-right h2 {
+    font-size: 22px;
+  }
+
+  .form-group input {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  button {
+    padding: 8px 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-container {
+    width: 95%; 
+    height: 400px; 
+  }
+
+  .login-left, .login-right {
+    flex: 1;
+    padding: 10px;
+  }
+
+  .illustration {
+    width: 50%;
+    height: 50%;
+  }
+
+  .login-right h2 {
+    font-size: 20px;
+  }
+
+  .form-group input {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  button {
+    padding: 8px 18px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    width: 100%; 
+    height: auto; 
+  }
+
+  .login-left, .login-right {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .illustration {
+    width: 50%;
+    height: 50%;
+  }
+
+  .login-right h2 {
+    font-size: 18px; 
+  }
+
+  .form-group input {
+    padding: 6px;
+    font-size: 13px;
+  }
+
+  button {
+    padding: 6px 15px;
+    font-size: 14px;
+  }
+}
+/* NAVBAR */
+.nav-link{
+  font-weight: bold;
+}
+.icon-header{
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+}
+.nav-profile-icon {
+  display: flex;
+  align-items: center;
+}
+.nav-profile-icon svg {
+  width: 30px;
+  height: 30px;
+  margin-left: 10px; 
+}
+/* DASHBOARD */
+.notification {
+position: fixed;
+top: -50px;
+left: 50%;
+transform: translateX(-50%);
+background-color: #28a745;
+color: white;
+padding: 15px 20px;
+border-radius: 5px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+font-size: 16px;
+font-weight: bold;
+z-index: 1000;
+transition: top 0.5s ease-in-out;
+}
+.notification.show {
+top: 10px;
+}
+/* DATA MOTOR */
+.table-mtr-color th{
+  background-color: rgb(224, 102, 20);
+}
+
+
+/* DATA CUSTOMER */
+.table-customer-color th{
+  background-color: rgb(192, 224, 75);
+}
+/* DATA SEWA */
+.table-sewa-color th{
+  background-color: cyan;
+}
+
